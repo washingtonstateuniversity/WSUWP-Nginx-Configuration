@@ -4,3 +4,16 @@ server {
     set $embed_request 0;
     return 301 https://wsu.edu;
 }
+
+server {
+    server_name *.wsu.edu;
+    include /etc/nginx/wsuwp-common-header.conf;
+
+    ssl_certificate     /etc/nginx/ssl/default.wp.wsu.edu.cer;
+    ssl_certificate_key /etc/nginx/ssl/default.wp.wsu.edu.key;
+
+    include /etc/nginx/wsuwp-ssl-common.conf;
+    #access_log off;
+    add_header 'Content-Type' 'text/plain charset=UTF-8' always;
+    return 404 'Address not available';
+}
