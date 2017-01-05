@@ -1,0 +1,3 @@
+[submodule "sites-enabled"]
+	path = sites-enabled
+	url = git@github.com:washingtonstateuniversity/WSUWP-Nginx-Sites-Enabled.git
